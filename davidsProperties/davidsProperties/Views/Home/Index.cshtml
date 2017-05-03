@@ -2,9 +2,60 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>Spicy Boiz</h1>
-    <p class="lead">Hello World!</p>
-    <p><a href="https://assets.change.org/photos/4/ks/mn/AmKSmNQjHIVcKxl-800x450-noPad.jpg?1467137857" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+
+<div class="col-xs-12" style="height: 20vh;"></div>
+
+
+<div class="jumbotron vertical-center" id="indexJumbo">
+	<div class="container" id="searchContainer">
+		<div class="row">
+			<p id="searchGreeting">Search for your spicy dream home now.</p>
+		</div>
+		<div class="row">
+			<div id="custom-search-input">
+				<div class="input-group col-md-12">
+					<input type="text" class="  search-query form-control" placeholder="Enter a suburb or postcode to begin" />
+					<span class="input-group-btn">
+					    <button class="btn btn-success" type="button">
+					        <span class=" glyphicon glyphicon-search"></span>
+					    </button>
+					</span>
+				</div>
+			</div>
+		</div>    
+        @* search box ends here *@                        
+                    <form class="form-inline" id="selForm">                        
+                        <select class="form-control" id="sel1">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>                                                                      
+                       
+                        <select class="form-control" id="sel2">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                                                                            
+                        <select class="form-control" id="sel3">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>                                                  
+                    
+                        <select class="form-control" id="sel4">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                    </form>                           
+        @* end filters *@
+	</div>
 </div>
+
+
 

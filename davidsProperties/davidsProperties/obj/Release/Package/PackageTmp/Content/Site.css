@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url("https://s-media-cache-ak0.pinimg.com/originals/66/59/72/66597269fcb35e87be3004d45e357d3b.jpg");
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -20,5 +21,111 @@
 input,
 select,
 textarea {
-    max-width: 280px;
+    /*max-width: 280px;*/
+}
+
+.vertical-center {
+    background: rgb(255, 255, 255, 0.50);
+    min-height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#searchContainer {
+    width: 100vw;
+}
+
+
+/*#footer {
+    position: absolute;
+    bottom: 0px;
+    width: 115vw;
+    background: rgba(46, 24, 240, 0.5);
+}*/
+
+#searchGreeting {
+    padding-bottom: 3vh;
+    text-align: center;
+    font-size: 130%;
+    font-weight: bold; 
+}
+
+#filterBox {
+    padding-top: 5vh;
+    font-weight: normal;
+    font-size: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#sel1 {
+    width: 100px;
+    height: 28px;
+    font-size: 60%;
+}
+
+#sel2 {
+    width: 100px;
+    height: 28px;
+    font-size: 60%;
+}
+
+#sel3 {
+    width: 100px;
+    height: 28px;
+    font-size: 60%;
+}
+
+#sel4 {
+    width: 100px;
+    height: 28px;
+    font-size: 60%;
+}
+
+#createJumbo {
+    background: rgb(255, 255, 255, 0.75);
+}
+
+#listJumbo {
+    background: rgb(255, 255, 255, 0.75);
+}
+
+#deleteJumbo {
+    background: rgb(255, 255, 255, 0.75);
+}
+
+#detailsJumbo {
+    background: rgb(255, 255, 255, 0.75);
+}
+
+#editJumbo {
+    background: rgb(255, 255, 255, 0.75);
+}
+
+
+#indexLink {
+    color: gray;
+    font-size: 14pt
+}
+
+#indexLink:hover {
+    color: #666;
+    text-decoration:none;
+
+}
+
+#darkLink {
+    color: cornflowerblue;
+    font-size: 14pt
+}
+
+#darkLink:hover {
+    color: darkslateblue;
+}
+
+#indexLinkSpan {
+    position: relative;
+    top:12px;
 }
