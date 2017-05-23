@@ -186,7 +186,9 @@ D:\Users\Sam\Documents\Visual Studio 2017\Projects\propertySite\davidsProperties
 D:\Users\Sam\Documents\Visual Studio 2017\Projects\propertySite\davidsProperties\davidsProperties\bin\Microsoft.AI.ServerTelemetryChannel.xml
 D:\Users\Sam\Documents\Visual Studio 2017\Projects\propertySite\davidsProperties\davidsProperties\bin\Microsoft.AI.WindowsServer.xml
 D:\Users\Sam\Documents\Visual Studio 2017\Projects\propertySite\davidsProperties\davidsProperties\bin\Microsoft.AI.Web.xml
-D:\Users\Sam\Documents\Visual Studio 2017\Projects\propertySite\davidsProperties\davidsProperties\obj\Release\davidsProperties.Migrations.InitialCreate.resources
-D:\Users\Sam\Documents\Visual Studio 2017\Projects\propertySite\davidsProperties\davidsProperties\obj\Release\davidsProperties.csproj.GenerateResource.Cache
 D:\Users\Sam\Documents\Visual Studio 2017\Projects\propertySite\davidsProperties\davidsProperties\obj\Release\davidsProperties.dll
 D:\Users\Sam\Documents\Visual Studio 2017\Projects\propertySite\davidsProperties\davidsProperties\obj\Release\davidsProperties.pdb
+D:\Users\Sam\Documents\Visual Studio 2017\Projects\propertySite\davidsProperties\davidsProperties\obj\Release\davidsProperties.csprojResolveAssemblyReference.cache
+D:\Users\Sam\Documents\Visual Studio 2017\Projects\propertySite\davidsProperties\davidsProperties\obj\Release\davidsProperties.Migrations.InitialCreate.resources
+D:\Users\Sam\Documents\Visual Studio 2017\Projects\propertySite\davidsProperties\davidsProperties\obj\Release\davidsProperties.csproj.GenerateResource.Cache
+D:\Users\Sam\Documents\Visual Studio 2017\Projects\propertySite\davidsProperties\davidsProperties\obj\Release\davidsProperties.Migrations.MissingXXX.resources

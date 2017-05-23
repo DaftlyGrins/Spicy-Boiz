@@ -129,3 +129,8 @@ textarea {
     position: relative;
     top:12px;
 }
+
+#navbarRight{
+    position: relative;
+    right: 20px;
+}

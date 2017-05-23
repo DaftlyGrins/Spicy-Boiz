@@ -1,4 +1,6 @@
 ﻿<!DOCTYPE html>
+@using Microsoft.AspNet.Identity
+@using davidsProperties.Controllers;
 <html>
 <head>
     <meta charset="utf-8" />
@@ -45,24 +47,46 @@
                     <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("David's Spicy Properties", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Create", "Create", "Properties", new { area = "" }, new { @class = "navbar-brand" })         
+
+
+            @if (Context.User.Identity.IsAuthenticated)
+            {
                 
-                @* For god knows what reason this doesn't work with HTML.ActionLink so has to be done manually.
-                   If someone could work it out it would be useful.*@                    
+                @*if (user.Equals("sam.grice1@gmail.com"))
+                {
+
+                    @Html.ActionLink("Add a property", "Create", "Properties", new { area = "" }, new { @class = "navbar-brand" })         
+
+                    @* For god knows what reason this doesn't work with HTML.ActionLink so has to be done manually.
+                    If someone could work it out it would be useful.*@                    
+
+                //}*@
+
+                @*Placeholder admin user is email: admin@admin.com | pw: Admin#1*@
+                String user = User.Identity.GetUserName();
+                var userController = DependencyResolver.Current.GetService<UserRolesController>();
+                if (userController.IsUserAdmin(user))
+                {
+                        @Html.ActionLink("Add a property", "Create", "Properties", new { area = "" }, new { @class = "navbar-brand" })
+                        @Html.ActionLink("Set user credentials", "Index", "UserRoles", new { area = "" }, new { @class = "navbar-brand" })
+                }
+
+            }
+
+            
+
                 <span id="indexLinkSpan">
-                    <a href="~/Properties/Index" id="indexLink">Index</a>
+                    <a href="~/Properties/Index" id="indexLink">See all properties</a>
                 </span>
 
-                @*<a class="navbar-brand">About us
-                    
-                </a>*@
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Register</a></li>
+                <ul class="nav navbar-nav navbar-right" id="navbarRight">
+                    @Html.Partial("_LoginPartial")
+                    @*<li><a href="#">Register</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -72,7 +96,7 @@
                             <li role="separator" class="divider"></li>
                             <li><a href="#">Separated link</a></li>
                         </ul>
-                    </li>
+                    </li>*@
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->

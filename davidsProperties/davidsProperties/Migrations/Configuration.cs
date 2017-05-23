@@ -9,7 +9,8 @@ namespace davidsProperties.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
             ContextKey = "davidsProperties.Models.davidsPropertiesContext";
         }
 

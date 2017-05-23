@@ -1,18 +1,31 @@
 ﻿@model IEnumerable<davidsProperties.Models.Property>
+@using Microsoft.AspNet.Identity
+@using davidsProperties.Controllers;
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Property list";
 }
 
 <div class="col-xs-12" style="height: 10vh;"></div>
 <div class="jumbotron" id="listJumbo">
-    <h2>Index</h2>
+    <h2>Properties</h2>
+    @if (Context.User.Identity.IsAuthenticated)
+    {
 
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
+
+        @*Placeholder admin user is email: admin@admin.com | pw: Admin#1*@
+        String user = User.Identity.GetUserName();
+        var userController = DependencyResolver.Current.GetService<UserRolesController>();
+        if (userController.IsUserAdmin(user))
+        {
+            @Html.ActionLink("Create New", "Create")
+        }
+    }
     <table class="table">
         <tr>
+            <th>
+                image
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.postcode)
             </th>
@@ -27,8 +40,11 @@
 
         @foreach (var item in Model)
         {
-            <tr>
+            <tr>           
                 <td>
+                    <img src="https://assets.change.org/photos/4/ks/mn/AmKSmNQjHIVcKxl-800x450-noPad.jpg?1467137857" alt="Spicy boy" style="width:304px;height:228px;">
+                </td>
+                <td>                    
                     @Html.DisplayFor(modelItem => item.postcode)
                 </td>
                 <td>
@@ -37,11 +53,20 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.rent)
                 </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-                </td>
+                @if (Context.User.Identity.IsAuthenticated)
+                {
+                    @*Placeholder admin user is email: admin@admin.com | pw: Admin#1*@
+                    String user = User.Identity.GetUserName();
+                    var userController = DependencyResolver.Current.GetService<UserRolesController>();
+                    if (userController.IsUserAdmin(user))
+                    {
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                        </td>
+                    }
+                }
             </tr>
         }
 
