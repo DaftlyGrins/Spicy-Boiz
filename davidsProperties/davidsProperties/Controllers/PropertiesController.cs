@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using davidsProperties.Models;
+using System.Threading.Tasks;
 
 namespace davidsProperties.Controllers
 {
@@ -14,10 +15,22 @@ namespace davidsProperties.Controllers
     {
         private davidsPropertiesContext db = new davidsPropertiesContext();
 
-        // GET: Properties
-        public ActionResult Index()
+        //// GET: Properties
+        //public ActionResult Index()
+        //{
+        //    return View(db.Properties.ToList());
+        //}
+
+        public async Task<ActionResult> Index(string searchString)
         {
-            return View(db.Properties.ToList());
+            var properties = from p in db.Properties
+                             select p;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                properties = properties.Where(s => s.postcode.ToString().Equals(searchString));
+            }
+            return View(await properties.ToListAsync());
+            //return View(properties.ToList());
         }
 
         // GET: Properties/Details/5
