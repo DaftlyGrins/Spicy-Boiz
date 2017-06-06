@@ -1,7 +1,7 @@
 ﻿@model davidsProperties.Models.Property
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Details";    
 }
 
 <div class="col-xs-12" style="height: 10vh;"></div>
@@ -12,6 +12,7 @@
         <h4>Property</h4>
         <hr />
         <dl class="dl-horizontal">
+
             <dt>
                 @Html.DisplayNameFor(model => model.postcode)
             </dt>
@@ -23,6 +24,9 @@
             <dt>
                 @Html.DisplayNameFor(model => model.address)
             </dt>
+
+            
+            
 
             <dd>
                 @Html.DisplayFor(model => model.address)
@@ -36,10 +40,19 @@
                 @Html.DisplayFor(model => model.rent)
             </dd>
 
+            <dt>
+                @Html.DisplayNameFor(model => model.image)
+            </dt>
+            
+            <dd>
+                @Html.DisplayFor(model => model.image)
+            </dd>
+
         </dl>
     </div>
     <p>
         @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
         <a href="~/Properties/Index" id="darkLink">Back to list</a>
+
     </p>
     </div>

@@ -97,7 +97,7 @@ namespace davidsProperties.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,postcode,address,rent")] Property property)
+        public ActionResult Create([Bind(Include = "ID,postcode,address,rent,image")] Property property)
         {
             if (ModelState.IsValid)
             {
@@ -129,7 +129,7 @@ namespace davidsProperties.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,postcode,address,rent")] Property property)
+        public ActionResult Edit([Bind(Include = "ID,postcode,address,rent,image")] Property property)
         {
             if (ModelState.IsValid)
             {

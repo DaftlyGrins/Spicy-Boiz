@@ -2,6 +2,7 @@
 @using Microsoft.AspNet.Identity
 @using davidsProperties.Controllers;
 
+
 @{
     ViewBag.Title = "Property list";
 }
@@ -31,7 +32,7 @@
     <table class="table">
         <tr>
             <th>
-                image
+                @Html.DisplayNameFor(model => model.image)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.postcode)
@@ -47,11 +48,12 @@
 
         @foreach (var item in Model)
         {
-            <tr>           
+            var url = item.image.ToString();            
+            <tr>
                 <td>
-                    <img src="https://assets.change.org/photos/4/ks/mn/AmKSmNQjHIVcKxl-800x450-noPad.jpg?1467137857" alt="Spicy boy" style="width:304px;height:228px;">
+                    <img src=@url style="width:304px;height:228px;">
                 </td>
-                <td>                    
+                <td>
                     @Html.DisplayFor(modelItem => item.postcode)
                 </td>
                 <td>
@@ -60,10 +62,11 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.rent)
                 </td>
-                        
+
+
                 <td>
-                    @Html.ActionLink("Details", "Details", new { id = item.ID }) 
-                </td>   
+                    @Html.ActionLink("Details", "Details", new { id = item.ID })
+                </td>
 
                     @*Placeholder admin user is email: admin@admin.com | pw: Admin#1*@
                     @{  

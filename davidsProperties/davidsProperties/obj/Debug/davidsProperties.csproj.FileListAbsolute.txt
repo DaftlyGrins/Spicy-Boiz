@@ -287,9 +287,7 @@ F:\propertySite\davidsProperties\davidsProperties\bin\Microsoft.AI.ServerTelemet
 F:\propertySite\davidsProperties\davidsProperties\bin\Microsoft.AI.WindowsServer.xml
 F:\propertySite\davidsProperties\davidsProperties\bin\Microsoft.AI.Web.xml
 F:\propertySite\davidsProperties\davidsProperties\obj\Debug\davidsProperties.csprojResolveAssemblyReference.cache
-F:\propertySite\davidsProperties\davidsProperties\obj\Debug\davidsProperties.Migrations.InitialCreate.resources
-F:\propertySite\davidsProperties\davidsProperties\obj\Debug\davidsProperties.Migrations.MissingXXX.resources
-F:\propertySite\davidsProperties\davidsProperties\obj\Debug\davidsProperties.csproj.GenerateResource.Cache
 F:\propertySite\davidsProperties\davidsProperties\obj\Debug\davidsProperties.dll
 F:\propertySite\davidsProperties\davidsProperties\obj\Debug\davidsProperties.pdb
-F:\propertySite\davidsProperties\davidsProperties\obj\Debug\davidsProperties.Migrations.updatedatabase.resources
+F:\propertySite\davidsProperties\davidsProperties\obj\Debug\davidsProperties.Migrations.image.resources
+F:\propertySite\davidsProperties\davidsProperties\obj\Debug\davidsProperties.csproj.GenerateResource.Cache

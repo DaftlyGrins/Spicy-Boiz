@@ -11,5 +11,6 @@ namespace davidsProperties.Models
         public int postcode { get; set; }
         public string address { get; set; }
         public decimal rent { get; set; }
+        public string image { get; set; }
     }
 }

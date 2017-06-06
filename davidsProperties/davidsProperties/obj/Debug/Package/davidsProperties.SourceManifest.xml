@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<sitemanifest>
-  <IisApp path="D:\Users\Sam\Documents\Visual Studio 2017\Projects\propertySite\davidsProperties\davidsProperties\obj\Debug\Package\PackageTmp" />
-  <setAcl path="D:\Users\Sam\Documents\Visual Studio 2017\Projects\propertySite\davidsProperties\davidsProperties\obj\Debug\Package\PackageTmp" setAclResourceType="Directory" />
-  <setAcl path="D:\Users\Sam\Documents\Visual Studio 2017\Projects\propertySite\davidsProperties\davidsProperties\obj\Debug\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
-</sitemanifest>

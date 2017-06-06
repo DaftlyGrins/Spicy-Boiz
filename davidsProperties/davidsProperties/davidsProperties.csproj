@@ -214,17 +214,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705020936554_InitialCreate.cs" />
-    <Compile Include="Migrations\201705020936554_InitialCreate.Designer.cs">
-      <DependentUpon>201705020936554_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705031633201_MissingXXX.cs" />
-    <Compile Include="Migrations\201705031633201_MissingXXX.Designer.cs">
-      <DependentUpon>201705031633201_MissingXXX.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705171447093_update-database.cs" />
-    <Compile Include="Migrations\201705171447093_update-database.Designer.cs">
-      <DependentUpon>201705171447093_update-database.cs</DependentUpon>
+    <Compile Include="Migrations\201706061418583_image.cs" />
+    <Compile Include="Migrations\201706061418583_image.Designer.cs">
+      <DependentUpon>201706061418583_image.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -330,14 +322,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705020936554_InitialCreate.resx">
-      <DependentUpon>201705020936554_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705031633201_MissingXXX.resx">
-      <DependentUpon>201705031633201_MissingXXX.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705171447093_update-database.resx">
-      <DependentUpon>201705171447093_update-database.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706061418583_image.resx">
+      <DependentUpon>201706061418583_image.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
