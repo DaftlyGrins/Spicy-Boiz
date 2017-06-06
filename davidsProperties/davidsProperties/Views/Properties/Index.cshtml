@@ -9,10 +9,9 @@
 <div class="col-xs-12" style="height: 10vh;"></div>
 <div class="jumbotron" id="listJumbo">
     <h2>Properties</h2>
+
     @if (Context.User.Identity.IsAuthenticated)
     {
-
-
         @*Placeholder admin user is email: admin@admin.com | pw: Admin#1*@
         String user = User.Identity.GetUserName();
         var userController = DependencyResolver.Current.GetService<UserRolesController>();

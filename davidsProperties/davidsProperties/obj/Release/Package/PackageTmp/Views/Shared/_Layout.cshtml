@@ -13,29 +13,6 @@
 
 
 
-    @*<div class="navbar navbar-toggleable-md navbar-light style="background-color: #e3f2fd;"">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("About", "About", "Home")</li>
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    </ul>
-                    @Html.Partial("_LoginPartial")
-                </div>
-            </div>
-        </div>*@
-
-
-
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -49,20 +26,12 @@
                 @Html.ActionLink("David's Spicy Properties", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
 
 
-            @if (Context.User.Identity.IsAuthenticated)
-            {
                 
-                @*if (user.Equals("sam.grice1@gmail.com"))
-                {
+            @if (Context.User.Identity.IsAuthenticated)
+            {                
 
-                    @Html.ActionLink("Add a property", "Create", "Properties", new { area = "" }, new { @class = "navbar-brand" })         
-
-                    @* For god knows what reason this doesn't work with HTML.ActionLink so has to be done manually.
-                    If someone could work it out it would be useful.*@                    
-
-                //}*@
-
-                @*Placeholder admin user is email: admin@admin.com | pw: Admin#1*@
+                @*Placeholder admin user is email: admin@admin.com | pw: Admin#1                                *@
+                
                 String user = User.Identity.GetUserName();
                 var userController = DependencyResolver.Current.GetService<UserRolesController>();
                 if (userController.IsUserAdmin(user))
@@ -85,18 +54,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                 <ul class="nav navbar-nav navbar-right" id="navbarRight">
-                    @Html.Partial("_LoginPartial")
-                    @*<li><a href="#">Register</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                        </ul>
-                    </li>*@
+                    @Html.Partial("_LoginPartial")                   
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -105,12 +63,7 @@
 
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        @*<footer>
-            <div id="footer">
-                <p>&copy; @DateTime.Now.Year - Old Mate David</p>
-            </div>
-        </footer>*@
+        <hr />        
     </div>
 
     @Scripts.Render("~/bundles/jquery")

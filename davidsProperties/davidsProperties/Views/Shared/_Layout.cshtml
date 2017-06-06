@@ -26,10 +26,12 @@
                 @Html.ActionLink("David's Spicy Properties", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
 
 
+                
             @if (Context.User.Identity.IsAuthenticated)
             {                
 
-                @*Placeholder admin user is email: admin@admin.com | pw: Admin#1*@
+                @*Placeholder admin user is email: admin@admin.com | pw: Admin#1                                *@
+                
                 String user = User.Identity.GetUserName();
                 var userController = DependencyResolver.Current.GetService<UserRolesController>();
                 if (userController.IsUserAdmin(user))

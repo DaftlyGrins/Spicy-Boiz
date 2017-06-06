@@ -12,7 +12,4 @@
   <parameter name="userRolesContext-Web.config Connection String" description="userRolesContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=userRolesContext-20170518005314; Integrated Security=True; MultipleActiveResultSets=True; AttachDbFilename=|DataDirectory|userRolesContext-20170518005314.mdf" tags="SqlConnectionString">
     <parameterEntry kind="XmlFile" scope="F:\\propertySite\\davidsProperties\\davidsProperties\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='userRolesContext']/@connectionString" />
   </parameter>
-  <parameter name="davidsPropertiesContext_DatabasePublish-Web.config Connection String" description="davidsPropertiesContext_DatabasePublish Connection String used in web.config by the application to access the database." defaultValue="davidsPropertiesContext_DatabasePublish.ConnetionString" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="F:\\propertySite\\davidsProperties\\davidsProperties\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='davidsPropertiesContext_DatabasePublish']/@connectionString" />
-  </parameter>
 </parameters>

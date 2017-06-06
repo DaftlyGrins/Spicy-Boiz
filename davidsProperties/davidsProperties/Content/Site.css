@@ -1,7 +1,8 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-image: url("https://s-media-cache-ak0.pinimg.com/originals/66/59/72/66597269fcb35e87be3004d45e357d3b.jpg");
+    /*Background sourced from https://pixabay.com/en/architecture-family-house-front-yard-1836070/ used under creative commons license.*/
+    background-image: url("/Images/architecture-1836070_1920.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
@@ -27,7 +28,7 @@ textarea {
 }
 
 .vertical-center {
-    background: rgb(255, 255, 255, 0.50);
+    background: rgb(255, 255, 255, 0.75);
     min-height: 30vh;
     display: flex;
     align-items: center;
