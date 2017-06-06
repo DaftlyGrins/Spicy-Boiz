@@ -24,7 +24,7 @@
 
     <form asp-controller="Properties" asp-action="Index">
         <p>
-            Postcode: <input type="text" class="inlineFormInput" name="SearchString" placeholder="Exact values only">
+            Filter properties by postcode or address: <input type="text" class="inlineFormInput" name="SearchString" id="onPageFilter">
             <input type="submit" class="btn btn-default" value="Filter" />
         </p>
     </form>
@@ -61,22 +61,28 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.rent)
                 </td>
-                @if (Context.User.Identity.IsAuthenticated)
-                {
-                    @*Placeholder admin user is email: admin@admin.com | pw: Admin#1*@
-                    String user = User.Identity.GetUserName();
-                    var userController = DependencyResolver.Current.GetService<UserRolesController>();
-                    if (userController.IsUserAdmin(user))
-                    {
-                        <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-                        </td>
-                    }
-                }
-            </tr>
-        }
+                        
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }) 
+                </td>   
 
+                    @*Placeholder admin user is email: admin@admin.com | pw: Admin#1*@
+                    @{  
+                        if (User.Identity.IsAuthenticated)
+                        {
+                            String user = User.Identity.GetUserName();
+                            var userController = DependencyResolver.Current.GetService<UserRolesController>();
+                            if (userController.IsUserAdmin(user))
+                            {
+
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                                </td>
+                            }
+                        }
+                    }                                                                                                            
+            </tr>              
+            }
     </table>
 </div>

@@ -19,18 +19,56 @@ namespace davidsProperties.Controllers
         //public ActionResult Index()
         //{
         //    return View(db.Properties.ToList());
-        //}
+        //}        
 
-        public async Task<ActionResult> Index(string searchString)
+        public async Task<ActionResult> Index(string searchString, int minRent = 0, int maxRent = 1500, bool rentCheck = false)
         {
             var properties = from p in db.Properties
                              select p;
             if (!String.IsNullOrEmpty(searchString))
             {
-                properties = properties.Where(s => s.postcode.ToString().Equals(searchString));
+                bool isPostcode = true;
+                if (searchString.Length == 4)
+                {
+                    foreach (char c in searchString)
+                    {
+                        if (!Char.IsDigit(c))
+                        {
+                            isPostcode = false;
+                        }
+                    }
+                }
+                else
+                {
+                    isPostcode = false;
+                }
+                if (isPostcode)
+                {
+                    if (rentCheck)
+                    {
+                        properties = properties.Where(s => s.postcode.ToString().Equals(searchString) && s.rent >= minRent &&
+                        s.rent <= maxRent);
+                    } else
+                    {
+                        properties = properties.Where(s => s.postcode.ToString().Equals(searchString));
+                    }
+                    
+                }
+                else
+                {
+                    if (rentCheck)
+                    {
+                        properties = properties.Where(s => s.address.ToString().Contains(searchString) && s.rent >= minRent &&
+                        s.rent <= maxRent);
+                    } else
+                    {
+                        properties = properties.Where(s => s.address.ToString().Contains(searchString));
+                    }
+                    
+                }
+
             }
             return View(await properties.ToListAsync());
-            //return View(properties.ToList());
         }
 
         // GET: Properties/Details/5

@@ -2,6 +2,8 @@
     padding-top: 50px;
     padding-bottom: 20px;
     background-image: url("https://s-media-cache-ak0.pinimg.com/originals/66/59/72/66597269fcb35e87be3004d45e357d3b.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -133,4 +135,8 @@ textarea {
 #navbarRight{
     position: relative;
     right: 20px;
+}
+
+hr {
+    border: none;
 }

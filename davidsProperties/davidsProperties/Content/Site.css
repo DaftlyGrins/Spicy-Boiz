@@ -23,7 +23,7 @@
 input,
 select,
 textarea {
-    /*max-width: 280px;*/
+    
 }
 
 .vertical-center {
@@ -38,13 +38,6 @@ textarea {
     width: 100vw;
 }
 
-
-/*#footer {
-    position: absolute;
-    bottom: 0px;
-    width: 115vw;
-    background: rgba(46, 24, 240, 0.5);
-}*/
 
 #searchGreeting {
     padding-bottom: 3vh;
@@ -68,23 +61,6 @@ textarea {
     font-size: 60%;
 }
 
-#sel2 {
-    width: 100px;
-    height: 28px;
-    font-size: 60%;
-}
-
-#sel3 {
-    width: 100px;
-    height: 28px;
-    font-size: 60%;
-}
-
-#sel4 {
-    width: 100px;
-    height: 28px;
-    font-size: 60%;
-}
 
 #createJumbo {
     background: rgb(255, 255, 255, 0.75);
@@ -139,4 +115,43 @@ textarea {
 
 hr {
     border: none;
+}
+
+.Row {
+    display: table;   
+    border-spacing: 0px; 
+    width: auto;
+}
+
+.Column {
+    display: table-cell;
+    padding: 5px;
+    width: auto;
+}
+
+.searchColumn {
+    width: 50vw;
+}
+
+#filterText {
+    font-size: 75%;
+}
+
+#rentFilters {
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+}
+
+#rentCheck {    
+    margin-left: 21vw;
+}
+
+#onPageFilter {
+    width: 200px;
+
+}
+
+.inlineFormInput {
+    width: 200px;
 }

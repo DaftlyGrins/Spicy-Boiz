@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 @using Microsoft.AspNet.Identity
+@using davidsProperties.Controllers;
 <html>
 <head>
     <meta charset="utf-8" />
@@ -50,21 +51,33 @@
 
             @if (Context.User.Identity.IsAuthenticated)
             {
-                String user = User.Identity.GetUserName();
-                if (user.Equals("sam.grice1@gmail.com"))
+                
+                @*if (user.Equals("sam.grice1@gmail.com"))
                 {
 
-                    @Html.ActionLink("Create", "Create", "Properties", new { area = "" }, new { @class = "navbar-brand" })         
+                    @Html.ActionLink("Add a property", "Create", "Properties", new { area = "" }, new { @class = "navbar-brand" })         
 
                     @* For god knows what reason this doesn't work with HTML.ActionLink so has to be done manually.
                     If someone could work it out it would be useful.*@                    
-                    <span id="indexLinkSpan">
-                        <a href="~/Properties/Index" id="indexLink">Index</a>
-                    </span>
+
+                //}*@
+
+                @*Placeholder admin user is email: admin@admin.com | pw: Admin#1*@
+                String user = User.Identity.GetUserName();
+                var userController = DependencyResolver.Current.GetService<UserRolesController>();
+                if (userController.IsUserAdmin(user))
+                {
+                        @Html.ActionLink("Add a property", "Create", "Properties", new { area = "" }, new { @class = "navbar-brand" })
+                        @Html.ActionLink("Set user credentials", "Index", "UserRoles", new { area = "" }, new { @class = "navbar-brand" })
                 }
+
             }
 
+            
 
+                <span id="indexLinkSpan">
+                    <a href="~/Properties/Index" id="indexLink">See all properties</a>
+                </span>
 
             </div>
 
