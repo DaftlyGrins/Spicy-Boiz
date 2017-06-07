@@ -68,7 +68,11 @@ namespace davidsProperties.Controllers
                 }
 
             }
-            return View(await properties.ToListAsync());
+            if (rentCheck)
+            {
+                properties = properties.Where(s => s.rent >= minRent && s.rent <= maxRent);
+            }             
+            return View(await properties.ToListAsync());                            
         }
 
         // GET: Properties/Details/5
