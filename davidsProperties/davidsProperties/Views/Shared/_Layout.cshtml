@@ -11,8 +11,6 @@
 </head>
 <body>
 
-
-
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -26,48 +24,76 @@
                 @Html.ActionLink("David's Spicy Properties", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
 
 
-                
-            @if (Context.User.Identity.IsAuthenticated)
-            {                
 
-                @*Placeholder admin user is email: admin@admin.com | pw: Admin#1                                *@
-                
+                @if (Context.User.Identity.IsAuthenticated)
+                {
+
+                    @*Placeholder admin user is email: admin@admin.com | pw: Admin#1*@
+
                 String user = User.Identity.GetUserName();
                 var userController = DependencyResolver.Current.GetService<UserRolesController>();
                 if (userController.IsUserAdmin(user))
                 {
-                        @Html.ActionLink("Add a property", "Create", "Properties", new { area = "" }, new { @class = "navbar-brand" })
-                        @Html.ActionLink("Set user credentials", "Index", "UserRoles", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Add a property", "Create", "Properties", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Set user credentials", "Index", "UserRoles", new { area = "" }, new { @class = "navbar-brand" })
+                    }
+
                 }
 
-            }
-            
                 <span id="indexLinkSpan">
                     <a href="~/Properties/Index" id="indexLink">See all properties</a>
                 </span>
 
+
+
+                
             </div>
 
-            @if (ViewBag.title != "Home Page")
-            {
-                <form action="~/Properties/Index?=SearchString">
-                    <div class="Row" id="navSearch">
-                        <div class="searchColumn">
-                            <input type="text" id="searchTextBox" class="search-query form-control" name="SearchString" placeholder="Enter a suburb or postcode to begin" />
-                        </div>
-                        <span class="input-group-btn">
-                            <button class="btn btn-success" type="submit">
-                                <span class=" glyphicon glyphicon-search"></span>
-                            </button>
-                        </span>
-                    </div>
-                </form>
-            }
+
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
                 <ul class="nav navbar-nav navbar-right" id="navbarRight">
+                    @if (ViewBag.title != "Home Page")
+                    {
+                        <form action="~/Properties/Index?=SearchString" id="navSearchForm">
+                            <div class="searchRow" id="navSearch">
+                                <div class="searchColumn">
+                                    <input type="text" id="searchTextBox" class="search-query form-control" name="SearchString" placeholder="Search here..." />
+                                </div>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-success" type="submit">
+                                        <span class=" glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                            </div>
+                        </form>
+                    }
+                    @if (Context.User.Identity.IsAuthenticated)
+                    {
+                        String email = User.Identity.GetUserName();
+                        var userController = DependencyResolver.Current.GetService<UserRolesController>();
+                        String userType = userController.getUserRoleFromEmail(email);
+                        if (userType.Equals("Admin"))
+                        {
+                            @Html.ActionLink("Your profile", "PropertyManager", "Profile", new { area = "" }, new { @class = "navbar-brand" })
+                        }
+                        else if (userType.Equals("Staff")){
+                            @Html.ActionLink("Your profile", "Staff", "Profile", new { area = "" }, new { @class = "navbar-brand" })
+                        }
+                        else if (userType.Equals("Tenant"))
+                        {
+                            @Html.ActionLink("Your profile", "Tenant", "Profile", new { area = "" }, new { @class = "navbar-brand" })
+                        }
+                        else if (userType.Equals("Property Owner"))
+                        {
+                            @Html.ActionLink("Your profile", "PropertyOwner", "Profile", new { area = "" }, new { @class = "navbar-brand" })
+                        }
+                        else
+                        {
+                            @Html.ActionLink("Your profile", "ProspectiveTenant", "Profile", new { area = "" }, new { @class = "navbar-brand" })
+                        }
+                    }                    
                     @Html.Partial("_LoginPartial")                   
                 </ul>
             </div><!-- /.navbar-collapse -->

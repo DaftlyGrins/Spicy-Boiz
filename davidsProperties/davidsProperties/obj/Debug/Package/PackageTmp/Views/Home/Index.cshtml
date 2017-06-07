@@ -1,0 +1,154 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="col-xs-12" style="height: 20vh;"></div>
+
+
+<div class="jumbotron vertical-center" id="indexJumbo">
+	<div class="container" id="searchContainer">
+		<div class="row">
+			<p id="searchGreeting">Search for your spicy dream home now.</p>
+		</div>
+		<div class="row">
+			<div id="custom-search-input">
+                <div class="input-group col-md-12">
+                    <form action="~/Properties/Index?=SearchString&minRent&maxRent&rentCheck">
+                        <div class="Row" id="searchRow">
+                            <div class="searchColumn">
+                                <input type="text" id="searchTextBox" class="search-query form-control" name="SearchString" placeholder="Enter a suburb or postcode to begin" />
+                            </div>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-success" type="submit">
+                                        <span class=" glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>                            
+                        </div>
+                        <div class="Row">
+                            <input type="checkbox" name="rentCheck" id="rentCheck" value="true"> Filter by rent?<br>
+                        </div>    
+
+                        <div class="Row" id="rentFilters">
+                            <div class="Column" id="filterText"> Minimum rent:</div>  
+                            <div class="Column">
+                                <select class="form-control" id="sel1" name="minRent">
+                                    <option value=100>$100pw</option>
+                                    <option value=200>$200pw</option>
+                                    <option value=300>$300pw</option>
+                                    <option value=400>$400pw</option>
+                                    <option value=500>$500pw</option>
+                                    <option value=600>$600pw</option>
+                                    <option value=700>$700pw</option>
+                                    <option value=800>$800pw</option>
+                                    <option value=900>$900pw</option>
+                                    <option value=1000>$1000pw</option>
+                                    <option value=1100>$1100pw</option>
+                                    <option value=1200>$1200pw</option>
+                                    <option value=1300>$1300pw</option>
+                                    <option value=1400>$1400pw</option>
+                                    <option value=1500>$1500pw</option>
+                                    <option value=1600>$1600pw</option>
+                                    <option value=1700>$1700pw</option>
+                                    <option value=1800>$1800pw</option>
+                                    <option value=1900>$1900pw</option>
+                                    <option value=2000>$2000pw</option>
+                                    <option value=2100>$2100pw</option>
+                                    <option value=2200>$2200pw</option>
+                                    <option value=2300>$2300pw</option>
+                                    <option value=2400>$2400pw</option>
+                                    <option value=2500>$2500pw</option>
+                                    <option value=2600>$2600pw</option>
+                                    <option value=2700>$2700pw</option>
+                                    <option value=2800>$2800pw</option>
+                                    <option value=2900>$2900pw</option>
+                                    <option value=3000>$3000pw</option>
+                                    <option value=3100>$3100pw</option>
+                                    <option value=3200>$3200pw</option>
+                                    <option value=3300>$3300pw</option>
+                                    <option value=3400>$3400pw</option>
+                                    <option value=3500>$3500pw</option>
+                                    <option value=3600>$3600pw</option>
+                                    <option value=3700>$3700pw</option>
+                                    <option value=3800>$3800pw</option>
+                                    <option value=3900>$3900pw</option>
+                                    <option value=4000>$4000pw</option>
+                                    <option value=4100>$4100pw</option>
+                                    <option value=4200>$4200pw</option>
+                                    <option value=4300>$4300pw</option>
+                                    <option value=4400>$4400pw</option>
+                                    <option value=4500>$4500pw</option>    
+                                    <option value=4600>$4600pw</option>
+                                    <option value=4700>$4700pw</option>
+                                    <option value=4800>$4800pw</option>
+                                    <option value=4900>$4900pw</option>
+                                    <option value=5000>$5000pw</option>
+                                </select>
+                            </div>
+
+                        <div class="Column" id="filterText"> Maximum rent:  </div>  
+                        <div class="Column">
+                            <select class="form-control" id="sel1" name="maxRent">
+                                <option value=100>$100pw</option>
+                                <option value=200>$200pw</option>
+                                <option value=300>$300pw</option>
+                                <option value=400>$400pw</option>
+                                <option value=500>$500pw</option>
+                                <option value=600>$600pw</option>
+                                <option value=700>$700pw</option>
+                                <option value=800>$800pw</option>
+                                <option value=900>$900pw</option>
+                                <option value=1000>$1000pw</option>
+                                <option value=1100>$1100pw</option>
+                                <option value=1200>$1200pw</option>
+                                <option value=1300>$1300pw</option>
+                                <option value=1400>$1400pw</option>
+                                <option value=1500>$1500pw</option>
+                                <option value=1600>$1600pw</option>
+                                <option value=1700>$1700pw</option>
+                                <option value=1800>$1800pw</option>
+                                <option value=1900>$1900pw</option>
+                                <option value=2000>$2000pw</option>
+                                <option value=2100>$2100pw</option>
+                                <option value=2200>$2200pw</option>
+                                <option value=2300>$2300pw</option>
+                                <option value=2400>$2400pw</option>
+                                <option value=2500>$2500pw</option>
+                                <option value=2600>$2600pw</option>
+                                <option value=2700>$2700pw</option>
+                                <option value=2800>$2800pw</option>
+                                <option value=2900>$2900pw</option>
+                                <option value=3000>$3000pw</option>
+                                <option value=3100>$3100pw</option>
+                                <option value=3200>$3200pw</option>
+                                <option value=3300>$3300pw</option>
+                                <option value=3400>$3400pw</option>
+                                <option value=3500>$3500pw</option>
+                                <option value=3600>$3600pw</option>
+                                <option value=3700>$3700pw</option>
+                                <option value=3800>$3800pw</option>
+                                <option value=3900>$3900pw</option>
+                                <option value=4000>$4000pw</option>
+                                <option value=4100>$4100pw</option>
+                                <option value=4200>$4200pw</option>
+                                <option value=4300>$4300pw</option>
+                                <option value=4400>$4400pw</option>
+                                <option value=4500>$4500pw</option>
+                                <option value=4600>$4600pw</option>
+                                <option value=4700>$4700pw</option>
+                                <option value=4800>$4800pw</option>
+                                <option value=4900>$4900pw</option>
+                                <option value=5000>$5000pw</option>
+                            </select>
+                            </div>
+                        </div>                                            
+                    </form>                   
+                </div>
+			</div>
+		</div>    
+    </div>
+    </div>
+
+
+
+

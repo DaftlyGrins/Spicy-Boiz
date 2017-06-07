@@ -1,0 +1,90 @@
+﻿@model IEnumerable<davidsProperties.Models.Property>
+@using Microsoft.AspNet.Identity
+@using davidsProperties.Controllers;
+
+
+@{
+    ViewBag.Title = "Property list";
+}
+
+<div class="col-xs-12" style="height: 10vh;"></div>
+<div class="jumbotron" id="listJumbo">
+    <h2>Properties</h2>
+
+    @if (Context.User.Identity.IsAuthenticated)
+    {
+        @*Placeholder admin user is email: admin@admin.com | pw: Admin#1*@
+        String user = User.Identity.GetUserName();
+        var userController = DependencyResolver.Current.GetService<UserRolesController>();
+        if (userController.IsUserAdmin(user))
+        {
+            @Html.ActionLink("Create New", "Create")
+        }
+    }
+
+    <form asp-controller="Properties" asp-action="Index">
+        <p>
+            Filter properties by postcode or address: <input type="text" class="inlineFormInput" name="SearchString" id="onPageFilter">
+            <input type="submit" class="btn btn-default" value="Filter" />
+        </p>
+    </form>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.postcode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.rent)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            var url = item.image.ToString();            
+            <tr>
+                <td>
+                    <img src=@url style="width:304px;height:228px;">
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.postcode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.rent)
+                </td>
+
+
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.ID })
+                </td>
+
+                    @*Placeholder admin user is email: admin@admin.com | pw: Admin#1*@
+                    @{  
+                        if (User.Identity.IsAuthenticated)
+                        {
+                            String user = User.Identity.GetUserName();
+                            var userController = DependencyResolver.Current.GetService<UserRolesController>();
+                            if (userController.IsUserAdmin(user))
+                            {
+
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                                </td>
+                            }
+                        }
+                    }                                                                                                            
+            </tr>              
+            }
+    </table>
+</div>

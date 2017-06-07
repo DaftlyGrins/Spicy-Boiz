@@ -291,3 +291,9 @@ F:\propertySite\davidsProperties\davidsProperties\obj\Debug\davidsProperties.dll
 F:\propertySite\davidsProperties\davidsProperties\obj\Debug\davidsProperties.pdb
 F:\propertySite\davidsProperties\davidsProperties\obj\Debug\davidsProperties.Migrations.image.resources
 F:\propertySite\davidsProperties\davidsProperties\obj\Debug\davidsProperties.csproj.GenerateResource.Cache
+F:\propertySite\davidsProperties\davidsProperties\bin\System.Net.Http.Formatting.dll
+F:\propertySite\davidsProperties\davidsProperties\bin\System.Web.Http.dll
+F:\propertySite\davidsProperties\davidsProperties\bin\System.Web.Http.WebHost.dll
+F:\propertySite\davidsProperties\davidsProperties\bin\System.Net.Http.Formatting.xml
+F:\propertySite\davidsProperties\davidsProperties\bin\System.Web.Http.xml
+F:\propertySite\davidsProperties\davidsProperties\bin\System.Web.Http.WebHost.xml

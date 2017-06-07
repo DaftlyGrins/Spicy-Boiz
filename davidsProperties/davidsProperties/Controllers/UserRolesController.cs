@@ -16,19 +16,35 @@ namespace davidsProperties.Controllers
 
         public bool IsUserAdmin(string userEmail)
         {
-            bool result = false;
-            UserRoles user = db.UserRoles.Single(u => u.email == userEmail);
-            if (user.userRole.Equals("Admin") || user.userRole.Equals("admin"))
+
+            try
             {
-                result = true;
-            }   
-            return result;
+                UserRoles user = db.UserRoles.SingleOrDefault(u => u.email == userEmail);
+                if (user.userRole.Equals("Admin") || user.userRole.Equals("admin"))
+                {
+
+                    return true;
+                } else
+                {
+                    return false;
+                }
+            } catch (Exception e){
+                return false;
+            }
+            
         }
 
         public String getUserRoleFromEmail(String email)
         {
-            UserRoles user = db.UserRoles.Single(u => u.email == email);
-            return user.email.ToString();
+            UserRoles user = db.UserRoles.SingleOrDefault(u => u.email == email);
+            if (user == null)
+            {
+                return "Prospective tenant";
+            } else
+            {
+                return user.userRole.ToString();
+            }
+            
         }
 
         // GET: UserRoles

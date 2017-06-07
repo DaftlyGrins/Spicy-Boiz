@@ -92,7 +92,6 @@ textarea {
 #indexLink:hover {
     color: #666;
     text-decoration:none;
-
 }
 
 #darkLink {
@@ -124,6 +123,10 @@ hr {
     width: auto;
 }
 
+.searchRow {
+    display: table;
+}
+
 .Column {
     display: table-cell;
     padding: 5px;
@@ -152,3 +155,15 @@ hr {
 .inlineFormInput {
     width: 200px;
 }
+
+#navSearch {
+    width:250px;
+    
+}
+
+#navSearchForm {
+    float: left;
+    position: relative;
+    top: 8px;
+}
+

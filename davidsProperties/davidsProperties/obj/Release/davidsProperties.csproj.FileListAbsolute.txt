@@ -290,3 +290,9 @@ F:\propertySite\davidsProperties\davidsProperties\obj\Release\davidsProperties.c
 F:\propertySite\davidsProperties\davidsProperties\obj\Release\davidsProperties.dll
 F:\propertySite\davidsProperties\davidsProperties\obj\Release\davidsProperties.pdb
 F:\propertySite\davidsProperties\davidsProperties\obj\Release\davidsProperties.Migrations.image.resources
+F:\propertySite\davidsProperties\davidsProperties\bin\System.Net.Http.Formatting.dll
+F:\propertySite\davidsProperties\davidsProperties\bin\System.Web.Http.dll
+F:\propertySite\davidsProperties\davidsProperties\bin\System.Web.Http.WebHost.dll
+F:\propertySite\davidsProperties\davidsProperties\bin\System.Net.Http.Formatting.xml
+F:\propertySite\davidsProperties\davidsProperties\bin\System.Web.Http.xml
+F:\propertySite\davidsProperties\davidsProperties\bin\System.Web.Http.WebHost.xml
