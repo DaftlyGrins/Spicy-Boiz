@@ -1,1 +1,1 @@
-# Spicy-Boiz
+Instructions for accessing the website:
