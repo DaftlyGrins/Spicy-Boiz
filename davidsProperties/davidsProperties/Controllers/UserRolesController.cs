@@ -25,6 +25,12 @@ namespace davidsProperties.Controllers
             return result;
         }
 
+        public String getUserRoleFromEmail(String email)
+        {
+            UserRoles user = db.UserRoles.Single(u => u.email == email);
+            return user.email.ToString();
+        }
+
         // GET: UserRoles
         public ActionResult Index()
         {

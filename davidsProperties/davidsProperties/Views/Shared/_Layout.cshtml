@@ -50,6 +50,22 @@
 
             </div>
 
+            @if (ViewBag.title != "Home Page")
+            {
+                <form action="~/Properties/Index?=SearchString">
+                    <div class="Row" id="navSearch">
+                        <div class="searchColumn">
+                            <input type="text" id="searchTextBox" class="search-query form-control" name="SearchString" placeholder="Enter a suburb or postcode to begin" />
+                        </div>
+                        <span class="input-group-btn">
+                            <button class="btn btn-success" type="submit">
+                                <span class=" glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            }
+
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 

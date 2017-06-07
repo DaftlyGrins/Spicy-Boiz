@@ -92,7 +92,6 @@ textarea {
 #indexLink:hover {
     color: #666;
     text-decoration:none;
-
 }
 
 #darkLink {
@@ -130,10 +129,6 @@ hr {
     width: auto;
 }
 
-.searchColumn {
-    width: 50vw;
-}
-
 #filterText {
     font-size: 75%;
 }
@@ -155,4 +150,11 @@ hr {
 
 .inlineFormInput {
     width: 200px;
+}
+
+#navSearch {
+    width:250px;
+    position: relative;
+    left: 30px;
+    top:8px;
 }
